@@ -1,0 +1,20 @@
+{
+    "name": "route.js",
+    "version": "0.1.0",
+    "main": [
+        "route.js"
+    ],
+    "description": "Simple router library that give API that can be use on server or in a browser.",
+    "license": "GNU GPL 3",
+    "ignore": [
+        "README.md",
+        "Makefile"
+    ],
+    "dependencies": {
+        "jquery": "1.11.1"
+    },
+    "devDependencies": {
+        "jasmine": "latest",
+        "phantom": "latest"
+    }
+}
