@@ -28,6 +28,7 @@ describe('Testing route.js library', function() {
             router.match('/foo/bar/--{{id}}--{{name}}--', controller.foo);
             router.match('/foo/baz/{{id}}--{{name}}', controller.bar);
             router.match('/foo/quux/{{id}}', controller.baz);
+            router.match('/', controller.bar);
             router.exec('/foo/bar/--10--hello--');
         });
         it('foo route shuld be called', function() {
