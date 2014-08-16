@@ -54,16 +54,22 @@ function route() {
     };
     var parser = self.route_parser(open_tag, close_tag);
     self.routes = {};
-    self.match = function(path, fn) {
-        var parts = parser(path);
-        if (!self.routes[parts.re]) {
-            self.routes[parts.re] = [];
+    self.match = function(path, fn, injectibles) {
+        if (path instanceof Array) {
+            path.forEach(function(path) {
+                self.match(path, fn, self.extract_names(fn));
+            });
+        } else {
+            var parts = parser(path);
+            if (!self.routes[parts.re]) {
+                self.routes[parts.re] = [];
+            }
+            self.routes[parts.re].push({
+                names: parts.names,
+                callback: fn,
+                injectibles: injectibles || self.extract_names(fn)
+            });
         }
-        self.routes[parts.re].push({
-            names: parts.names,
-            callback: fn,
-            injectibles: self.extract_names(fn)
-        });
     };
     self.exec = function(url) {
         Object.keys(self.routes).forEach(function(re) {
