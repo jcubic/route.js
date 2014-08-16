@@ -50,7 +50,7 @@ function route() {
         if (typeof fn == 'function') {
             fn = fn.toString();
         }
-        return fn.replace(/\s*/g, '').match(/function\(([^\)]*)/)[1].split(',');
+        return fn.replace(/\s*/g, '').match(/function[^(]*\(([^\)]*)/)[1].split(',');
     };
     var parser = self.route_parser(open_tag, close_tag);
     self.routes = {};
@@ -67,7 +67,7 @@ function route() {
     };
     self.exec = function(url) {
         Object.keys(self.routes).forEach(function(re) {
-            var m = url.match(new RegExp(re));
+            var m = url.match(new RegExp('^' + re + '$'));
             if (m) {
                 self.routes[re].forEach(function(obj) {
                     var matched = m.slice(1);
