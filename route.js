@@ -24,7 +24,7 @@ function route() {
     self.route_parser = function(open, close) {
         function escape_re(str) {
             if (typeof str == 'string') {
-                var special = /([\^\$\[\]\(\)\+\*\.\|])/g;
+                var special = /([\^\$\[\]\(\)\{\}\+\*\.\|])/g;
                 return str.replace(special, '\\$1');
             }
         }
