@@ -11,7 +11,9 @@
     "license": "GNU GPL 3",
     "ignore": [
         "README.md",
-        "Makefile"
+        "Makefile",
+        "SpecRunner.html",
+        "spec/routeSpec.js"
     ],
     "dependencies": {
     },
