@@ -13,7 +13,7 @@ hashchange or using HTML5 History API).
 var router = new route();
 
 router.match('/foo/bar/{{id}}/{{name}}', function(name, id) {
-    // name and it will be in different order
+    // name and id will be in different order
     // names in url need to match names in function
     console.log(name + ' ' + id);
 });
