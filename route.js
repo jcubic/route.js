@@ -79,7 +79,7 @@ function route() {
                 self.routes[re].forEach(function(obj) {
                     var matched = m.slice(1);
                     var args = [];
-                    if (matched) {
+                    if (matched.length) {
                         matched.forEach(function(value, i) {
                             var name = obj.names[i];
                             var index = obj.injectibles.indexOf(name);
