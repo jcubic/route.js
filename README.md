@@ -58,7 +58,7 @@ the init exec will also be needed to get init route when you refresh the page
 
 * `router::route_parser(open tag, close tag)`: return parser function that need to be called with route
   the function return object `{re: sting: names: array}`, if you want regex object you need to use
-  new RegExp('^' + re + '$') to have exact match, name filed contain list of names extracted from route
+  `new RegExp('^' + re + '$')` to have exact match, name filed contain list of names extracted from route
   (between open and closing tag).
 
 * `router::extract_names(fn)`: return parameters names from the function (from version 0.4.0 it work with arrow functions).
