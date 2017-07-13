@@ -77,10 +77,22 @@ function route() {
             });
         }
     };
-    self.test = function(route, path) {
-        var parts = parser(route);
-        var re = new RegExp('^' + parts.re + '$');
-        return re.test(path);
+    self.test = function(pattern, url) {
+        return !!self.map(pattern, url);
+    };
+    self.map = function(pattern, url) {
+        var parts = parser(pattern);
+        var m = url.match(new RegExp('^' + parts.re + '$'));
+        if (m) {
+            var matched = m.slice(1);
+            var result = {};
+            if (matched.length) {
+                parts.names.forEach(function(name, i) {
+                    result[name] = matched[i];
+                });
+            }
+            return result;
+        }
     };
     self.exec = function(url, init) {
         Object.keys(self.routes).forEach(function(re) {

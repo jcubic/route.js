@@ -1,7 +1,7 @@
 ## route.js
 
-[![npm](https://img.shields.io/badge/npm-0.4.0-blue.svg)](https://www.npmjs.com/package/jroute.js)
-![bower](https://img.shields.io/badge/bower-0.4.0-yellow.svg)
+[![npm](https://img.shields.io/badge/npm-0.5.0-blue.svg)](https://www.npmjs.com/package/jroute.js)
+![bower](https://img.shields.io/badge/bower-0.5.0-yellow.svg)
 
 Very small and simple routing library that can be use on the server or in the
 browser. It use dependency injection to inject arguments to your function.
@@ -68,6 +68,13 @@ the init exec will also be needed to get init route when you refresh the page
 * `router::match(path, fn[, data])`: create route, first is parsable route path as string, second is a function that will be called when exec is executed and thrid is optional data that will be stored in route, you will be able to access it in `router::exec` if you use a function as second argument.
 
 * `router::exec(url[, init])`: method execute route added by `router::match` if found any. The init paramater is a function (optioanl) that allow to execute match function with different context. The function is called with two arguments: (data from match function and callback function that need to be called with different context).
+
+* `router::map(pattern, url)`: return object with mapping names taken from url, eg. if you call it with:
+```javascript
+router.map('/user/{{name}}', '/user/foo');
+```
+it will return `{name: "foo"}` if pattern don't have variables it will return empty object and if it don't match it will return undefined.
+
 
 ## License
 
