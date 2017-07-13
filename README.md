@@ -44,7 +44,7 @@ router.exec(location.hash.replace(/^#/, ''));
 
 if you want to execute on change of the hash so hyperlinks work you can use this code:
 
-```
+```javascript
 window.addEventListener('hashchange', function() {
     router.exec(location.hash.replace(/^#/, ''));
 });
