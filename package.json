@@ -1,0 +1,23 @@
+{
+  "name": "jroute.js",
+  "version": "0.3.0",
+  "description": "Simple Route application for browser and node",
+  "main": "route.js",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jcubic/route.js.git"
+  },
+  "keywords": [
+    "route",
+    "history-api",
+    "hashchange"
+  ],
+  "author": "Jakub Jankiewicz <jcubic@onet.pl> (http://jcubic.pl/me/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jcubic/route.js/issues"
+  },
+  "homepage": "https://github.com/jcubic/route.js#readme"
+}
