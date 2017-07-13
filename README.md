@@ -1,7 +1,7 @@
 ## route.js
 
-[![npm](https://img.shields.io/badge/npm-0.5.0-blue.svg)](https://www.npmjs.com/package/jroute.js)
-![bower](https://img.shields.io/badge/bower-0.5.0-yellow.svg)
+[![npm](https://img.shields.io/badge/npm-0.5.1-blue.svg)](https://www.npmjs.com/package/jroute.js)
+![bower](https://img.shields.io/badge/bower-0.5.1-yellow.svg)
 
 Very small and simple routing library that can be use on the server or in the
 browser. It use dependency injection to inject arguments to your function.
