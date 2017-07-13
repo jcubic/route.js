@@ -42,7 +42,7 @@ function route() {
                 } else {
                     return chunk;
                 }
-            }).join('')
+            }).join('');
             return {re: str, names: result};
         };
     };
@@ -50,7 +50,12 @@ function route() {
         if (typeof fn == 'function') {
             fn = fn.toString();
         }
-        return fn.replace(/\s*/g, '').match(/function[^(]*\(([^\)]*)/)[1].split(',');
+        fn = fn.replace(/\s*/g, '');
+        var m = fn.match(/function[^(]*\(([^\)]*)/);
+        if (!m) {
+            m = fn.match(/\(([^\)]*)\)\=>/);
+        }
+        return m[1].split(',');
     };
     var parser = self.route_parser(open_tag, close_tag);
     self.routes = {};
@@ -71,6 +76,11 @@ function route() {
                 injectibles: injectibles || self.extract_names(fn)
             });
         }
+    };
+    self.test = function(route, path) {
+        var parts = parser(route);
+        var re = new RegExp('^' + parts.re + '$');
+        return re.test(path);
     };
     self.exec = function(url, init) {
         Object.keys(self.routes).forEach(function(re) {

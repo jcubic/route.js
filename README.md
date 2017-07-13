@@ -1,7 +1,7 @@
 ## route.js
 
-[![npm](https://img.shields.io/badge/npm-0.3.0-blue.svg)](https://www.npmjs.com/package/jroute.js)
-![bower](https://img.shields.io/badge/bower-0.3.0-yellow.svg)
+[![npm](https://img.shields.io/badge/npm-0.4.0-blue.svg)](https://www.npmjs.com/package/jroute.js)
+![bower](https://img.shields.io/badge/bower-0.4.0-yellow.svg)
 
 Very small and simple routing library that can be use on the server or in the
 browser. It use dependency injection to inject arguments to your function.
@@ -33,6 +33,8 @@ and inlcude the route.js and you're good to go.
 ```javascript
 var router = new route();
 
+// from version 0.4.0 you can use arrow functions
+
 router.match('/foo/bar/{{id}}/{{name}}', function(name, id) {
     // name and id will be in different order
     // names in url need to match names in function
@@ -51,6 +53,21 @@ window.addEventListener('hashchange', function() {
 ```
 
 the init exec will also be needed to get init route when you refresh the page
+
+## API
+
+* `router::route_parser(open tag, close tag)`: return parser function that need to be called with route
+  the function return object `{re: sting: names: array}`, if you want regex object you need to use
+  new RegExp('^' + re + '$') to have exact match, name filed contain list of names extracted from route
+  (between open and closing tag).
+
+* `router::extract_names(fn)`: return parameters names from the function (from version 0.4.0 it work with arrow functions).
+
+* `router::test(route, path)`: first argument is route that cane be parsed and second is actual path, it return true if path match the route.
+
+* `router::match(path, fn[, data])`: create route, first is parsable route path as string, second is a function that will be called when exec is executed and thrid is optional data that will be stored in route, you will be able to access it in `router::exec` if you use a function as second argument.
+
+* `router::exec(url[, init])`: method execute route added by `router::match` if found any. The init paramater is a function (optioanl) that allow to execute match function with different context. The function is called with two arguments: (data from match function and callback function that need to be called with different context).
 
 ## License
 
