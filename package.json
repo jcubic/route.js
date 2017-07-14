@@ -1,6 +1,6 @@
 {
   "name": "jroute.js",
-  "version": "0.5.1",
+  "version": "0.6.0",
   "description": "Simple Route library for browser and node",
   "main": "route.js",
   "scripts": {

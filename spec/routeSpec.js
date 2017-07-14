@@ -1,8 +1,16 @@
+/**@license
+ *  route.js - simple router with dependency injection
+ *  Copyright (C) 2014-2017 Jakub Jankiewicz <http://jcubic.pl/me>
+ *
+ *  Released under MIT license
+ */
+/* global describe, beforeEach, afterEach, it, spyOn, route, expect */
+
 
 // fake toString from original function so route.js will work
 function spy(obj, fun) {
     var orig = obj[fun];
-    spyOn(obj, fun).and.callThrough(); 
+    spyOn(obj, fun).and.callThrough();
     obj[fun].toString = function() {
         return orig.toString();
     };
@@ -41,7 +49,6 @@ describe('Testing route.js library', function() {
             router.exec('/foo/quux/10');
             expect(controller.baz.calls.argsFor(0)).toEqual([]);
         });
-        
         it('should get number and name from url', function() {
             expect(args).toEqual(['hello', '10']);
         });

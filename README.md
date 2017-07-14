@@ -1,7 +1,7 @@
 ## route.js
 
-[![npm](https://img.shields.io/badge/npm-0.5.1-blue.svg)](https://www.npmjs.com/package/jroute.js)
-![bower](https://img.shields.io/badge/bower-0.5.1-yellow.svg)
+[![npm](https://img.shields.io/badge/npm-0.6.0-blue.svg)](https://www.npmjs.com/package/jroute.js)
+![bower](https://img.shields.io/badge/bower-0.6.0-yellow.svg)
 
 Very small and simple routing library that can be use on the server or in the
 browser. It use dependency injection to inject arguments to your function.
@@ -75,6 +75,17 @@ router.map('/user/{{name}}', '/user/foo');
 ```
 it will return `{name: "foo"}` if pattern don't have variables it will return empty object and if it don't match it will return undefined.
 
+* `router::pick(array, url)`: select one or more routes from array that match url, it return array of objects:
+```javascript
+[{
+  "pattern": "/user/{{name}}",
+  "data": {
+    "name": "foo"
+  }
+}]
+```
+
+for url `/user/foo`, or empty array if not match found.
 
 ## License
 
