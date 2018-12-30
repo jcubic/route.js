@@ -1,6 +1,6 @@
 /**@license
  *  route.js - simple router with dependency injection
- *  Copyright (C) 2014-2017 Jakub Jankiewicz <http://jcubic.pl/me>
+ *  Copyright (C) 2014-2017 Jakub T. Jankiewicz <https://jcubic.pl/me>
  *
  *  Released under MIT license
  */
@@ -53,7 +53,7 @@
             fn = fn.replace(/\s*/g, '');
             var m = fn.match(/function[^(]*\(([^\)]*)/);
             if (!m) {
-                m = fn.match(/\(([^\)]*)\)\=>/);
+                m = fn.match(/\(?([^\)=]*)\)?\=>/);
             }
             return m[1].split(',');
         };

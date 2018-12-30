@@ -5,7 +5,7 @@
         "route.js"
     ],
     "authors": [
-        "Jakub Jankiewicz <jcubic@jcubic.pl>"
+        "Jakub T. Jankiewicz <jcubic@jcubic.pl>"
     ],
     "description": "Simple router library that give API that can be use on server or in a browser.",
     "license": "GNU GPL 3",

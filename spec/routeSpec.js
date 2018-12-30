@@ -1,6 +1,6 @@
 /**@license
  *  route.js - simple router with dependency injection
- *  Copyright (C) 2014-2017 Jakub Jankiewicz <http://jcubic.pl/me>
+ *  Copyright (C) 2014-2017 Jakub T. Jankiewicz <https://jcubic.pl/me>
  *
  *  Released under MIT license
  */

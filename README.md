@@ -91,4 +91,4 @@ for url `/user/foo`, or empty array if not match found.
 
 Licensed under [MIT](http://opensource.org/licenses/MIT) license
 
-Copyright (c) 2014-2017 [Jakub Jankiewicz](http://jcubic.pl/me)
+Copyright (c) 2014-2017 [Jakub T. Jankiewicz](https://jcubic.pl/me)
