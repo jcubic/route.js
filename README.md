@@ -65,7 +65,7 @@ the init exec will also be needed to get init route when you refresh the page
 
 * `router::test(route, path)`: first argument is route that cane be parsed and second is actual path, it return true if path match the route.
 
-* `router::match(path, fn[, data])`: create route, first is parsable route path as string, second is a function that will be called when exec is executed and thrid is optional data that will be stored in route, you will be able to access it in `router::exec` if you use a function as second argument.
+* `router::match(path, fn[, data])`: create route, first is parsable route path as string, second is a function that will be called when exec is executed and third is optional data that will be stored in route, you will be able to access it in `router::exec` if you use a function as second argument.
 
 * `router::exec(url[, init])`: method execute route added by `router::match` if found any. The init paramater is a function (optioanl) that allow to execute match function with different context. The function is called with two arguments: (data from match function and callback function that need to be called with different context).
 
